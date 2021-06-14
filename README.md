@@ -1,0 +1,1 @@
+# jmc-snapshot-copr
