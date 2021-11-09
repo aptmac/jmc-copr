@@ -1,6 +1,6 @@
 # Version
 %global major 8
-%global minor 0
+%global minor 1
 %global patchlevel 0
 
 # Revision
@@ -102,5 +102,8 @@ sed -i "/.SH FILES/a .I %{_sysconfdir}/%{name}.ini" %{buildroot}%{_mandir}/man1/
 %{_metainfodir}/jmc.appdata.xml
 
 %changelog
+* Tue Nov 09 2021 Alex Macdonald <almacdon@redhat.com> - 8.1.0-1
+- Update to version 8.1.0
+
 * Wed Jun 16 2021 Alex Macdonald <almacdon@redhat.com> - 8.1.0-1
 - Initial copr packaging of AdoptOpenJDK binaries
