@@ -1,11 +1,11 @@
 # Version
 %global major 8
-%global minor 1
+%global minor 2
 %global patchlevel 0
 
 # Revision
 %global revnum 1
-%global revdate 20210607613
+%global revdate 202111091831
 
 # set to 1 for snapshots, 0 for release
 %global usesnapshot 1

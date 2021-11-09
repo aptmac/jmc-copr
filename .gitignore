@@ -1,6 +1,5 @@
 *.src.rpm
 *.rpm
 
-# 8.1.0-SNAPSHOT
-org.openjdk.jmc-8.1.0-SNAPSHOT-linux.gtk.x86_64.tar.gz
-org.openjdk.jmc-8.1.0-SNAPSHOT-linux.gtk.x86_64
+org.openjdk.jmc-8.*.*-linux.gtk.x86_64.tar.gz
+org.openjdk.jmc-8.*.*-linux.gtk.x86_64
