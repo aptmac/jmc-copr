@@ -5,7 +5,7 @@
 
 # Revision
 %global revnum 1
-%global revdate 20211218020
+%global revdate 202303191849
 
 # set to 1 for snapshots, 0 for release
 %global usesnapshot 1
@@ -111,6 +111,9 @@ sed -i "/.SH FILES/a .I %{_sysconfdir}/%{name}.ini" %{buildroot}%{_mandir}/man1/
 %{_metainfodir}/jmc.appdata.xml
 
 %changelog
+* Wed May 17 2023 Alex Macdonald <almacdon@redhat.com> - 9.0.0-1.SNAPSHOT.202303191849
+- Use the appropriate revdate 
+
 * Wed May 17 2023 Alex Macdonald <almacdon@redhat.com> - 9.0.0-1.SNAPSHOT.20211218020
 - Update to snapshot of 9.0.0
 
