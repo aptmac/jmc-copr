@@ -1,4 +1,4 @@
-# JDK Mission Control copr
+# JDK Mission Control copr (9.0.0-SNAPSHOT)
 
 ### Motivation
 The purpose of this repo is to provide Fedora users with a method of easily installing and using JDK Mission Control (JMC). The current methodology includes packaging JMC binaries produced by AdoptOpenJDK, and hosting them on my copr page: https://copr.fedorainfracloud.org/coprs/almac/
