@@ -1,22 +1,13 @@
 # Version
 %global major 8
-%global minor 2
+%global minor 3
 %global patchlevel 0
 
 # Revision
 %global revnum 1
-%global revdate 202111091831
+%global releasestr %{revnum}
 
-# set to 1 for snapshots, 0 for release
-%global usesnapshot 1
-
-%if %{usesnapshot}
-  %global releasestr %{revnum}.SNAPSHOT.%{revdate}
-%else
-  %global releasestr %{revnum}
-%endif
-
-%global release_name %{major}.%{minor}.%{patchlevel}-SNAPSHOT
+%global release_name %{major}.%{minor}.%{patchlevel}
 %global tarball_name org.openjdk.jmc-%{release_name}-linux.gtk.x86_64
 
 # Install jmc in /usr/lib/jmc (arch-specific and multilib exempt)
@@ -39,7 +30,7 @@ Summary:    JDK Mission Control is a production time profiling and diagnostics t
 License:    UPL
 URL:        https://openjdk.java.net/projects/jmc/
 
-Source0:    https://github.com/AdoptOpenJDK/openjdk-jmc-overrides/releases/download/%{release_name}/%{tarball_name}.tar.gz
+Source0:    https://github.com/adoptium/jmc-build/releases/download/%{release_name}/%{tarball_name}.tar.gz
 Source1:    %{name}.desktop
 Source2:    %{name}.1
 Source3:    jmc.appdata.xml
@@ -60,7 +51,7 @@ applications running locally or deployed in production environments.
 %setup -q -n 'JDK Mission Control'
 
 %build
-# Nothing to build, thank you AdoptOpenJDK.
+# Nothing to build, thank you Adoptium.
 
 %install
 
@@ -111,5 +102,8 @@ sed -i "/.SH FILES/a .I %{_sysconfdir}/%{name}.ini" %{buildroot}%{_mandir}/man1/
 %{_metainfodir}/jmc.appdata.xml
 
 %changelog
+* Wed May 17 2023 Alex Macdonald <almacdon@redhat.com> - 8.3.0-1
+- Update to version 8.3.0-ga
+
 * Wed Jun 16 2021 Alex Macdonald <almacdon@redhat.com> - 8.1.0-1.SNAPSHOT.20210607613
 - Initial copr packaging of AdoptOpenJDK binaries

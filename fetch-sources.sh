@@ -1,7 +1,8 @@
 #!/bin/bash
 
-TARBALL_NAME=org.openjdk.jmc-8.2.0-SNAPSHOT-linux.gtk.x86_64.tar.gz
-URL=https://github.com/AdoptOpenJDK/openjdk-jmc-overrides/releases/download/8.2.0-SNAPSHOT/$TARBALL_NAME
+VERSION=8.3.0
+TARBALL_NAME=org.openjdk.jmc-$VERSION-linux.gtk.x86_64.tar.gz
+URL=https://github.com/adoptium/jmc-build/releases/download/$VERSION/$TARBALL_NAME
 
 # if a jmc snapshot tarball already exists, remove it prior to downloading a new one
 if [ -f $TARBALL_NAME ]; then
