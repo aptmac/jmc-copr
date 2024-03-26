@@ -5,19 +5,11 @@
 
 # Revision
 %global revnum 1
-%global revdate 202303191849
 
-# set to 1 for snapshots, 0 for release
-%global usesnapshot 1
+%global releasestr %{revnum}
 
-%if %{usesnapshot}
-  %global releasestr %{revnum}.SNAPSHOT.%{revdate}
-%else
-  %global releasestr %{revnum}
-%endif
-
-%global release_name %{major}.%{minor}.%{patchlevel}-SNAPSHOT
-%global tarball_name org.openjdk.jmc-%{release_name}-linux.gtk.x86_64
+%global release_name %{major}.%{minor}.%{patchlevel}
+%global tarball_name org.openjdk.jmc-linux.gtk.x86_64
 
 # Install jmc in /usr/lib/jmc (arch-specific and multilib exempt)
 %global _jmcdir %{_prefix}/lib/%{name}
@@ -47,7 +39,7 @@ Source3:    jmc.appdata.xml
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
 
-Requires:   java-11-openjdk-devel
+Requires:   java-17-openjdk-devel
 
 %description
 JDK Mission Control is a powerful profiler for HotSpot JVMs and has an
@@ -60,7 +52,7 @@ applications running locally or deployed in production environments.
 %setup -q -n 'JDK Mission Control'
 
 %build
-# Nothing to build, thank you AdoptOpenJDK.
+# Nothing to build, thank you Adoptium.
 
 %install
 
@@ -111,11 +103,5 @@ sed -i "/.SH FILES/a .I %{_sysconfdir}/%{name}.ini" %{buildroot}%{_mandir}/man1/
 %{_metainfodir}/jmc.appdata.xml
 
 %changelog
-* Wed May 17 2023 Alex Macdonald <almacdon@redhat.com> - 9.0.0-1.SNAPSHOT.202303191849
-- Use the appropriate revdate 
-
-* Wed May 17 2023 Alex Macdonald <almacdon@redhat.com> - 9.0.0-1.SNAPSHOT.20211218020
-- Update to snapshot of 9.0.0
-
-* Wed Jun 16 2021 Alex Macdonald <almacdon@redhat.com> - 8.1.0-1.SNAPSHOT.20210607613
-- Initial copr packaging of AdoptOpenJDK binaries
+* Tue Mar 26 2024 almac <almac@redhat.com> - 9.0.0-1
+- Initial package for JMC 9.0.0
